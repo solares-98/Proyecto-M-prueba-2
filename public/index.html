@@ -975,6 +975,17 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <script>
+    const envelope = document.getElementById("envelope");
+    const seal = document.getElementById("sealBtn");
+
+    seal.addEventListener("click", (e) => {
+    e.stopPropagation();
+    envelope.classList.toggle("open");
+
+    // opcional: ocultar sello al abrir
+    seal.style.opacity = "0";
+    });
+
 document.getElementById("rsvpForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
